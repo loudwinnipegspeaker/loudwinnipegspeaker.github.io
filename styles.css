@@ -26,6 +26,7 @@
 body {
     scroll-behavior: smooth;
     text-align: center;
+    display: flex;
     justify-content: center;
     width: 100%;
     height: 100vh;
@@ -35,6 +36,11 @@ body {
     color: var(--light-grey);
     font-family: 'Courier New', Courier, monospace;
     margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
 }
 
 a {
@@ -64,6 +70,11 @@ a {
     border-radius: 10px;
 }
 
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 .postsHeaderText {
     color: #999;
     font-family: courier prime, monospace;
@@ -72,7 +83,7 @@ a {
     letter-spacing: 2px;
     text-align: center;
     background: var(--main-bg-color);
-    padding: 0 .5rem;
+    padding: 0.5rem;
     z-index: 10;
     position: absolute;
     top: -10px;
@@ -83,10 +94,10 @@ a {
     border: 0;
     padding: 4px;
     margin: auto;
-    padding-top: .2rem;
+    padding-top: .5rem;
     padding-bottom: .5rem;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.8em;
     background-color: #4f4f4f;
     color: var(--medium-grey);
     border-radius: 5px;
@@ -120,8 +131,8 @@ a {
     margin-right: .5rem;
 }
 
-#text,
-#text:focus {
+#message,
+#message:focus {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     width: 70%;
     height: 10rem;
@@ -143,7 +154,7 @@ a {
     resize: vertical;
 }
 
-#text::-webkit-scrollbar {
+#message::-webkit-scrollbar {
     display: none;
 }
 
@@ -310,4 +321,30 @@ a {
     text-align: center;
     font-size: 0.9rem;
     width: 75%;
+}
+
+/* Loading Spinner Styles */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

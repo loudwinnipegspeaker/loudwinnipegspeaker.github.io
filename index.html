@@ -15,16 +15,24 @@
 </head>
 <body>
     <main>
+        
+        <div id="mainContainer" class="container">
         <div class="header-name">LOUD WINNIPEG SPEAKER</div>
         <div class="postsHeader" id="createPost">
             <div class="postsHeaderText">CREATE</div>
-            <form spellcheck="false" action="/post.php" method="post" id="form" enctype="multipart/form-data">
-            <div class="message-input"><textarea name="message" maxlength="1200" placeholder="Type Your Message here...." type="text" id="text"></textarea></div>
-            <div id="shareBtn">SHARE NOW<img src="/images/send.png" width="10"/></div>
+           <div class="message-input"><textarea name="message" maxlength="1200" placeholder="Type Your Message here...." type="text" id="message"></textarea></div>
+            <button id="shareBtn" onclick="postMessage()">SHARE NOW<img src="/images/send.png" width="10"/></button>
+            <div id="responseMessage" class="message"></div>
+        <div id="errorMessage" class="error"></div>
             <div id="info"><div><a href="/termAndCondition.html">Terms and Conditions</a></div><div class="postInfoLine"></div><div><a href="/privacyPolicy.html">Privacy Policy</a></div><div class="postInfoLine"></div><a href="https://instagram.com/WinnipegSpeaker"><div>Contact Us</div></a></div>
             </form>
             </div>
-        
+        </div>
+
+        <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+            <div class="spinner"></div>
+        </div>
+        <div id="mainContainer" class="container">
             <div class="postSeparator"><div class="postSeparatorLine"></div><div class="postSeparatorText">ALL POSTS</div></div>
             <!--post start //-->
             
@@ -36,6 +44,9 @@
               </div>
 
             <!--post end //-->
+        </div>
     </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>
