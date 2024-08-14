@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg-color: #1D1B1B;
+    --black: #000;
+    --dark-navy: #0a0a23;
+    --less-dark-bg: #333030;
+    --dark-grey: #d0d0d5;
+    --medium-grey: #dfdfe2;
+    --light-grey: #f5f6f7;
+    --peach: #f28373;
+    --salmon-color: #f0aea9;
+    --light-blue: #8bd9f6;
+    --light-orange: #f8b172;
+    --light-green: #93cb5b;
+    --golden-yellow: #f1ba33;
+    --gold: #f9aa23;
+    --green: #6bca6b;
+    --header-font-size: 1.2rem;
+}
+
+body {
+    scroll-behavior: smooth;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: var(--main-bg-color);
+    color: var(--light-grey);
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 40px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.header-name {
+    color: var(--medium-grey);
+    text-align: center;
+    margin-top: 20px;
+    font-size: var(--header-font-size);
+}
+
+.postsHeader {
+    border: 2px solid #888;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+.postsHeaderText {
+    color: #999;
+    font-family: courier prime, monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    background: var(--main-bg-color);
+    padding: 0 .5rem;
+    z-index: 10;
+    position: absolute;
+    top: -10px;
+    left: 1rem;
+}
+
+#shareBtn {
+    border: 0;
+    padding: 4px;
+    margin: auto;
+    padding-top: .2rem;
+    padding-bottom: .5rem;
+    text-align: center;
+    font-size: 1em;
+    background-color: #4f4f4f;
+    color: var(--medium-grey);
+    border-radius: 5px;
+    cursor: pointer;
+    word-spacing: .12rem;
+    letter-spacing: .05rem;
+    font-weight: 550;
+    margin: auto;
+    width: 70%;
+}
+
+#shareNowBtn:active {
+    opacity: .8;
+}
+
+#info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    opacity: .9;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    border-top: 2px solid #888;
+    font-size: .6rem;
+}
+
+#info .postInfoLine {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+#text,
+#text:focus {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    width: 70%;
+    height: 10rem;
+    margin: 5%;
+    border-radius: 5px;
+    background-color: var(--medium-grey);
+    border: 0;
+    outline: 0;
+    border-style: hidden;
+    padding: 1rem;
+    padding-top: .5rem;
+    line-height: 1.6em;
+    font-size: 1em;
+    word-spacing: .11rem;
+    white-space: normal;
+    color: var(--main-bg-color);
+    font-weight: 550;
+    margin: auto;
+    resize: vertical;
+}
+
+#text::-webkit-scrollbar {
+    display: none;
+}
+
+#createPost {
+    display: block;
+}
+
+.postSeparator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    margin-top: -.5rem;
+    opacity: 0;
+    animation: postSeparator 1s ease-in-out forwards;
+}
+
+@keyframes postSeparator {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: .65;
+    }
+}
+
+.postSeparatorLine {
+    width: 80%;
+    max-width: 50%;
+    height: 2px;
+    background-color: var(--medium-grey);
+    border-radius: 5px;
+    position: absolute;
+    z-index: -10;
+}
+
+.postSeparatorText {
+    color: var(--medium-grey);
+    font-family: courier prime, monospace;
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    background: var(--main-bg-color);
+    padding: 0 .5rem;
+    z-index: 10;
+}
+
+.notification {
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    position: relative;
+    width: 80%;
+    padding: 10px;
+    background: #29292c;
+    border-radius: 1rem;
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
+    --color: #32a6ff;
+    
+    /* Add these properties to center the card */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Ensure text aligns to the left */
+    text-align: left;
+  }
+
+.notification:before {
+    position: absolute;
+    content: "";
+    inset: 0.0625rem;
+    border-radius: 0.9375rem;
+    background: #18181b;
+    z-index: 2;
+}
+
+.notification:after {
+    position: absolute;
+    content: "";
+    width: 0.25rem;
+    inset: 0.65rem auto 0.65rem 0.5rem;
+    border-radius: 0.125rem;
+    background: var(--gradient);
+    transition: transform 300ms ease;
+    z-index: 4;
+}
+
+.notification:hover:after {
+    transform: translateX(0.15rem);
+}
+
+.notititle {
+    color: var(--color);
+    padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.notititle a {
+    font-style: italic;
+    text-decoration-style: dashed;
+}
+
+.notification:hover .notititle {
+    transform: translateX(0.15rem);
+}
+
+.notibody {
+    color: #99999d;
+    padding: 0 1.25rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.notification:hover .notibody {
+    transform: translateX(0.25rem);
+}
+
+.notiglow,
+.notiborderglow {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle closest-side at center, white, transparent);
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.notiglow {
+    z-index: 3;
+}
+
+.notiborderglow {
+    z-index: 1;
+}
+
+.notification:hover .notiglow {
+    opacity: 0.1;
+}
+
+.notification:hover .notiborderglow {
+    opacity: 0.1;
+}
+
+.small-time {
+    font-size: 0.8rem;
+    color: #6fb4e8;
+}
+
+.note {
+    color: var(--color);
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.9rem;
+    width: 75%;
+}
